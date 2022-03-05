@@ -1,0 +1,72 @@
+<!doctype html>
+
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+            
+        <title> sequenzen </title>
+        <meta name="description" content="Sequenzen deformieren">
+		<script src="morph.js"></script>
+		<link rel="stylesheet" href="styles.css">
+							
+		
+    </head>
+    
+    <body>
+		<div id="config">
+			<div id="dropdown_box">
+			<div id="beat_number_box" class="dropdown_box">
+				<label for="beat_number"># beats</label>
+				<select name="beat_number" id="beat_number" onchange="grid_number_changed('beat_number')">
+					<!--hier allenfalls mit "optgroup" tag damit css auf select anwendbar  -->
+					<option value="1">1</option>
+					<option value="2">2</option>
+					<option value="3">3</option>
+					<option value="4">4</option>
+				</select>
+			</div>
+			<div id="subdiv_number_box" class="dropdown_box">
+				<label for="subdivision_number"># subdivisions</label>
+				<select name="subdivision_number" id="subdivision_number" onchange="grid_number_changed('subdivision_number')">
+					<option value="1">1</option>
+			    	<option value="2">2</option>
+					<option value="3">3</option>
+					<option value="4">4</option>
+					<option value="5">5</option>
+					<option value="6">6</option>
+					<option value="7">7</option>
+					<option value="8">8</option>
+				</select>
+			</div>
+			<div id="swing_style_box" class="dropdown_box">
+	  			<label for="swing_style">swing style</label>
+				<select name="swing_style" id="swing_style" onchange="grid_number_changed('swing_style')">
+	  		    	<option value="1">1</option>
+				</select>
+			</div>	
+		</div>
+			<br/>
+			<div id="tempoBox" class="range_container">
+				bpm <span id="bpm_text">60 </span> 
+				<input id="bpm" type="range" min="20" max="300" step="5" value="60" onInput="bpm_changed(event)">
+			</div>
+			<div id="morphfactor" class="range_container">
+				swing <span id="swing_percentage_text">100%</span> 
+				<input id="swing_percentage" type="range" min="0.00" max="1.00" step="0.01" value="1" 				onInput="grid_number_changed('swing_percentage');">
+			</div>
+		
+		</div>
+		<div id="container">
+			<div class="wrapper" id="wrapper">
+				<div></div>
+			</div>
+			<div class="wrapper" id="plus_row" onclick="plus_div_row('wrapper')">
+				<div> + </div>
+			 </div>
+		</div>
+		<!--<canvas id="canv"></canvas>-->
+		<ul id="list"> </ul>
+		<p id="bottom_left"> [Space] </p>
+		
+    </body>
+</html>
